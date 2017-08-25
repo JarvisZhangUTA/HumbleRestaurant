@@ -11,6 +11,8 @@
 |
 */
 
+echo "got you";
+
 $app = require __DIR__.'/../bootstrap/app.php';
 
 /*
