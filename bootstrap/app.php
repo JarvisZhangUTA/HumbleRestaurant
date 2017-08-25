@@ -1,12 +1,12 @@
 <?php
-echo "????";
+
 require_once __DIR__.'/../vendor/autoload.php';
-echo "XXXXX";
+
 try {
     (new Dotenv\Dotenv(__DIR__.'/../'))->load();
 } catch (Dotenv\Exception\InvalidPathException $e) {
 }
-echo "????";
+
 /*
 |--------------------------------------------------------------------------
 | Create The Application
@@ -17,11 +17,11 @@ echo "????";
 | application as an "IoC" container and router for this framework.
 |
 */
-echo "????";
+
 $app = new Laravel\Lumen\Application(
     realpath(__DIR__.'/../')
 );
-echo "????";
+
 config([
     "filesystems" => [
         'default' => 'local',
@@ -33,10 +33,10 @@ config([
         ],
     ],
 ]);
-echo "????";
+
 $app->withFacades();
 $app->withEloquent();
-echo "????";
+
 /*
 |--------------------------------------------------------------------------
 | Register Container Bindings
@@ -47,24 +47,24 @@ echo "????";
 | your own bindings here if you like or you can make another file.
 |
 */
-echo "????";
+
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
     App\Exceptions\Handler::class
 );
-echo "????";
+
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
     App\Console\Kernel::class
 );
-echo "????";
+
 $app->singleton('mailer', function () use ($app) {
     return $app->loadComponent('mail', Illuminate\Mail\MailServiceProvider::class, 'mailer');
 });
 $app->singleton('filesystem', function ($app) {
     return $app->loadComponent('filesystems', 'Illuminate\Filesystem\FilesystemServiceProvider', 'filesystem');
 });
-echo "????";
+
 /*
 |--------------------------------------------------------------------------
 | Register Middleware
@@ -104,10 +104,10 @@ echo "????";
 | can respond to, as well as the controllers that may handle them.
 |
 */
-echo "????";
+
 $app->group(['namespace' => 'App\Http\Controllers'], function ($app) {
     require __DIR__.'/../routes/web.php';
 });
 session_start();
-echo "????";
+
 return $app;
