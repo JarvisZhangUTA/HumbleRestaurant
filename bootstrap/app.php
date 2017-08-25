@@ -22,8 +22,6 @@ $app = new Laravel\Lumen\Application(
     realpath(__DIR__.'/../')
 );
 
-echo "???";
-
 config([
     "filesystems" => [
         'default' => 'local',
@@ -111,5 +109,5 @@ $app->group(['namespace' => 'App\Http\Controllers'], function ($app) {
     require __DIR__.'/../routes/web.php';
 });
 session_start();
-
+echo ">>>>";
 return $app;
