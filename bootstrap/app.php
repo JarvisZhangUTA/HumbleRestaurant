@@ -22,6 +22,8 @@ $app = new Laravel\Lumen\Application(
     realpath(__DIR__.'/../')
 );
 
+echo "???";
+
 config([
     "filesystems" => [
         'default' => 'local',
