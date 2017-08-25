@@ -10,7 +10,8 @@
 | is ready to receive HTTP / Console requests from the environment.
 |
 */
-
+echo exec('whoami');
+die();
 $app = require __DIR__.'/../bootstrap/app.php';
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,4 @@ $app = require __DIR__.'/../bootstrap/app.php';
 */
 $request = Illuminate\Http\Request::capture();
 $app->run($request);
+
