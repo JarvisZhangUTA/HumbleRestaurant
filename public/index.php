@@ -10,6 +10,8 @@
 | is ready to receive HTTP / Console requests from the environment.
 |
 */
+$environment = app()->environment();
+var_dump($environment);
 
 $app = require __DIR__.'/../bootstrap/app.php';
 /*
