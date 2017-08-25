@@ -12,7 +12,7 @@
 */
 
 $app = require __DIR__.'/../bootstrap/app.php';
-$environment = app()->environment();
+echo "????";
 /*
 |--------------------------------------------------------------------------
 | Run The Application
