@@ -138,6 +138,7 @@
         </script>
     </div>
 
+
     <div class="footer text-center" style="margin-top: 40px; padding: 20px; background-color: #0f0f0f;">
             <p style="color: white;">Copyright © Humble Restaurants 2017</p>
     </div>
