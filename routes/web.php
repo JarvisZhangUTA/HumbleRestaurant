@@ -31,7 +31,7 @@ $app->post('/signUp','UserController@createUserAction');
 
 $app->get('/restaurantSignPage.{code}', 'adminController@verifyCodeAction');
 $app->post('/restaurantSignUp', 'RestaurantController@createRestaurantAction');
-$app->get('/restaurant.{id}', 'RestaurantController@getRestaurantAction');
+$app->get('/restaurant.{id}', 'App\Http\Controllers\RestaurantController@getRestaurantAction');
 
 $app->get('/profileUserPage','UserController@getUserAction');
 $app->post('/updateUser', 'UserController@updateUserAction');
