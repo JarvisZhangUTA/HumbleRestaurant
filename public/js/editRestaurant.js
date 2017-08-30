@@ -9,12 +9,15 @@ $(function(){
         var restaurantName = $("#restaurantName").val();
         var address = $("#address").val();
         var summary = $("#summary").val();
+        var percentageDonation = $("#percentageDonation").val();
+        var fund = $("#funds").val();
 
-        if(restaurantName == "" || address == "" || summary == ""){
+        if(restaurantName == "" || address == "" || summary == "" || percentageDonation == "" || fund == ""){
             $("#alertMsg").html("Values can't be empty.");
             $(".alert").hide().show();
             return;
         }
+
         if(lat == "" || lng == ""){
             $("#alertMsg").html("Cannot locate the address.");
             $(".alert").hide().show();
@@ -29,6 +32,8 @@ $(function(){
                 restaurantName : restaurantName,
                 lat : lat,
                 lng : lng,
+                percentageDonation : percentageDonation,
+                fund : fund,
                 address : address,
                 phone : $("#phone").val(),
                 info : $("#info").val(),

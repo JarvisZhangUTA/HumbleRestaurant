@@ -26,7 +26,7 @@ class Restaurant extends Model
      */
     protected $fillable = [
         'id','name','summary',
-        'fund','percentageDonation',
+        'fund','percentageDonation','donation',
         'address','longitude','latitude','uid','url',
         'phone','info',
         'rating','star1','star2','star3',

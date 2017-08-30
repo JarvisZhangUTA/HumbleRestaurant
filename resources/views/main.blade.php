@@ -19,8 +19,7 @@
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="/">Home</a></li>
-                    <li><a href="#">Donation</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="/getDonationRankPage">Donation</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
@@ -81,7 +80,7 @@
         </div>
     </header>
 
-    <div class="container" style="margin-top: 20px;">
+    <div class="container" style="margin-top: 80px;">
         <input id="pages" value="{{$pages}}" type="hidden">
 
         <div class="center-block" style="width: 400px; text-align: center;">
@@ -103,7 +102,7 @@
                         <div class="card-block">
                             <h4 class="card-title">{{ $restaurant->name }}</h4>
                             <hr>
-                            <div class="card-subtitle" style="margin-bottom: 10px;">
+                            <div class="card-subtitle btn-group" style="margin-bottom: 10px;">
                                 @for($i = 1; $i < 6; $i++)
                                     @if($restaurant->rating >= $i)
                                         <button type="button" class="btn btn-{{$type[$restaurant->rating]}} btn-xs" aria-label="Left Align">

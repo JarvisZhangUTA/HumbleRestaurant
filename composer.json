@@ -11,7 +11,8 @@
         "illuminate/mail": "^5.4",
         "guzzlehttp/guzzle": "^6.3",
         "jeremeamia/SuperClosure": "^2.3",
-        "doctrine/dbal": "^2.1"
+        "doctrine/dbal": "^2.1",
+        "twbs/bootstrap": "^3.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

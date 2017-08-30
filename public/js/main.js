@@ -44,7 +44,7 @@ $(function() {
                     content += "<h4 class='card-title'>";
                     content += restaurant.name;
                     content += "</h4><hr>";
-                    content += "<div class='card-subtitle' style='margin-bottom: 10px;'>";
+                    content += "<div class='card-subtitle btn-group' style='margin-bottom: 10px;'>";
 
                     for(var j = 1; j < 6; j++){
                         if(restaurant.rating >= j){

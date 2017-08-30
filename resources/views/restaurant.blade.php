@@ -20,9 +20,9 @@
                 @if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin')
                     <a href="/profileRestaurantPage.{{$restaurant->id}}" class="btn btn-default">Edit Info</a>
                 @endif
-                {{--@if(isset($_SESSION['role']) && $_SESSION['role'] == 'user')--}}
-                    {{--<a href="/uploadReceiptPage.{{$restaurant->id}}" class="btn btn-default">Upload Receipt</a>--}}
-                {{--@endif--}}
+                @if(isset($_SESSION['role']) && $_SESSION['role'] == 'user')
+                    <a href="/uploadReceiptPage.{{$restaurant->id}}" class="btn btn-default">Upload Receipt</a>
+                @endif
             </div>
         </div>
 
@@ -93,7 +93,27 @@
         </div>
 
         <div class="col-md-4">
-            <div class="rating-block">
+            <div class="rating-block" style="margin-top: 10px;">
+                <div class="row">
+                <div class="col-sm-6" style="text-align: center">
+                    <span class="h2" style="font-weight:bold">
+                        {{$restaurant->percentageDonation}}%
+                        </span>
+                    <p style="color: #5e5e5e;">
+                        payment will be given to charity.
+                    </p>
+                </div>
+                <div class="col-sm-6" style="text-align: center">
+                    <span class="h2" style="font-weight:bold">
+                    ${{$restaurant->donation}}
+                    </span>
+                    <p style="color: #5e5e5e;">
+                    has been given in this place.
+                    </p>
+                </div>
+                </div>
+            </div>
+            <div class="rating-block" style="margin-top: 10px;">
                 <p><span class="glyphicon glyphicon-phone"></span>  {{ $restaurant->phone }}</p>
                 <p><span class="glyphicon glyphicon-map-marker"></span>  {{ $restaurant->address }}</p>
             </div>

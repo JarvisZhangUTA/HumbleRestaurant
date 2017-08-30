@@ -19,6 +19,7 @@ class CreateTableRestaurants extends Migration
             $table->Text('summary');
             $table->integer('uid');
             $table->float('fund')->default(0);
+            $table->float('donation')->default(0);
             $table->float('percentageDonation')->default(0);
             $table->string('address');
             $table->float('longitude')->default(0);

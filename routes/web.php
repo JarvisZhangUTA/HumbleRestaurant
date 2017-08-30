@@ -31,7 +31,7 @@ $app->post('/signUp','UserController@createUserAction');
 
 $app->get('/restaurantSignPage.{code}', 'adminController@verifyCodeAction');
 $app->post('/restaurantSignUp', 'RestaurantController@createRestaurantAction');
-$app->get('/restaurant.{id}', 'App\Http\Controllers\RestaurantController@getRestaurantAction');
+$app->get('/restaurant.{id}', 'RestaurantController@getRestaurantAction');
 
 $app->get('/profileUserPage','UserController@getUserAction');
 $app->post('/updateUser', 'UserController@updateUserAction');
@@ -56,9 +56,17 @@ $app->get('/profileNewRestaurantPage', function() {
 $app->get('/uploadReceiptPage.{id}', function($id) {
     return view('upload_receipt',['id'=>$id]);
 });
+$app->post('/uploadReceipt','ReceiptController@uploadReceiptAction');
+$app->get('/profileReceiptPage','ReceiptController@getReceiptPage');
+$app->get('/getReceipt','ReceiptController@getReceiptAction');
+$app->post('/deleteReceipt','ReceiptController@deleteReceiptAction');
+$app->post('/verifyReceipt','ReceiptController@verifyReceiptAction');
 
 $app->post('/sendEmail', 'AdminController@sendEmailAction');
 
 $app->post('/addRating','RatingController@addRatingAction');
 $app->get('/getRestaurantRatings','RatingController@getRestaurantRatingsAction');
+
+$app->get('/getDonationRankPage','ReceiptController@getDonationRankAction');
+
 

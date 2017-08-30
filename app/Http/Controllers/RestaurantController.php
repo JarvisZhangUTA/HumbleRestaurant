@@ -21,9 +21,11 @@ class RestaurantController extends Controller
         $id = $request->get('id');
         $name = $request->get('restaurantName');
         $address = $request->get('address');
+        $percentageDonation = $request->get('percentageDonation');
         $summary = $request->get('summary');
         $phone = $request->get('phone');
         $info = $request->get('info');
+        $fund = $request->get('fund');
 
         $lat = $request->get('lat');
         $lng = $request->get('lng');
@@ -35,6 +37,8 @@ class RestaurantController extends Controller
                 'latitude' => $lat,
                 'address' => $address,
                 'summary' => $summary,
+                'fund' => $fund,
+                'percentageDonation' => $percentageDonation,
                 'phone' => $phone,
                 'info' => $info
             ]);
@@ -100,6 +104,8 @@ class RestaurantController extends Controller
 
     public function uploadRestaurantImgAction(Request $request,$id){
         $input = $request->file("img_file");
+        Storage::disk('local')->put('images', $input);
+
         \DB::table('images')->insert([
             ['rid' => $id,
                 'url' => 'storage/images/'.$input->hashName()]
@@ -110,7 +116,7 @@ class RestaurantController extends Controller
                 ->where('id', $id)
                 ->update(['url' => 'storage/images/'.$input->hashName()]);
 
-        Storage::disk('local')->put('images', $input);
+
         return redirect("/profileRestaurantImgPage.".$id);
     }
 

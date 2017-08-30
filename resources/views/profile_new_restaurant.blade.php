@@ -11,6 +11,7 @@
                 @elseif($_SESSION['role'] == 'admin')
                     <a class="list-group-item active" href="#">Register restaurant</a>
                 @endif
+                <a class="list-group-item" href="/profileReceiptPage">Receipts</a>
                 <a class="list-group-item"  href="/logout">Logout</a>
             </div>
         </div>

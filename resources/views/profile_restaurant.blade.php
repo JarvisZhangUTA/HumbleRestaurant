@@ -2,6 +2,9 @@
 
 @section('content')
     <link href="css/fileinput.min.css" rel="stylesheet" type="text/css">
+    <input id="id" value="{{$restaurant->id}}" type="hidden">
+    <input id="lat" value="{{$restaurant->latitude}}" type="hidden">
+    <input id="lng" value="{{$restaurant->longitude}}" type="hidden">
 
     <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-xs-4 col-sm-3 sidebar-offcanvas" id="sidebar">
@@ -13,15 +16,34 @@
                 @elseif($_SESSION['role'] == 'admin')
                     <a class="list-group-item" href="/profileNewRestaurantPage">Register restaurant</a>
                 @endif
+                <a class="list-group-item" href="/profileReceiptPage">View Receipts</a>
                 <a class="list-group-item" href="/logout">Logout</a>
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-8">
-            <input id="id" value="{{$restaurant->id}}" type="hidden">
-            <input id="lat" value="{{$restaurant->latitude}}" type="hidden">
-            <input id="lng" value="{{$restaurant->longitude}}" type="hidden">
+        <div class="col-xs-12 col-sm-8" style="padding-bottom: 20px;">
+            <div class="row">
+                <div class="col-md-8">
+                    <label for="percentageDonation">Percentage Donation</label>
+                    <input id="percentageDonation" value="{{$restaurant->percentageDonation}}"
 
+                           @if(!isset($_SESSION['role']) || $_SESSION['role'] != 'admin')
+                           disabled
+                           @endif
+
+                           type="number" class="form-control" name="percentageDonation" size="50">
+                </div>
+                <div class="col-md-4">
+                    <label for="funds">Balance</label>
+                    <input id="funds" value="{{$restaurant->fund}}"
+
+                           @if(!isset($_SESSION['role']) || $_SESSION['role'] != 'admin')
+                           disabled
+                           @endif
+
+                           type="number" class="form-control" name="funds" size="50">
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-8">
                 <label for="restaurantName">Restaurant Name</label>
