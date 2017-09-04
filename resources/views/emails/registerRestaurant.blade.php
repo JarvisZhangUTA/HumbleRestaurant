@@ -38,7 +38,7 @@
                 You got an invitation to join the Humble Restaurants!
                 Click the following link to sign up an account.
             </p>
-            76.187.243.34/restaurantSignPage.{{ $code }}
+            hrs.jarviszhang.com/restaurantSignPage.{{ $code }}
         </div>
     </div>
 </body>

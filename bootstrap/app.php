@@ -36,6 +36,7 @@ config([
 
 $app->withFacades();
 $app->withEloquent();
+$app->configure('mail');
 
 /*
 |--------------------------------------------------------------------------
@@ -91,6 +92,7 @@ $app->singleton('filesystem', function ($app) {
 |
 */
 
+$app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 

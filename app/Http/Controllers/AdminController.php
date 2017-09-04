@@ -32,6 +32,11 @@ class AdminController extends Controller
             );
 
         $tokenCodeController = new TokenCodeController();
+
+
+//        Mail::raw('Raw string email', function($msg)
+//        { $msg->to(['1731685262@qq.com']); $msg->from(['zhangjw.uta@gmail.com']); });
+
         $code = $tokenCodeController->createTokenCode("signUp");
         Mail::send('emails.registerRestaurant', ['code' => $code], function($message)
             use ($email)
