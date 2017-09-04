@@ -29,7 +29,7 @@ $app->get('/signUpPage', function() {
 });
 $app->post('/signUp','UserController@createUserAction');
 
-$app->get('/restaurantSignPage.{code}', 'adminController@verifyCodeAction');
+$app->get('/restaurantSignPage.{code}', 'AdminController@verifyCodeAction');
 $app->post('/restaurantSignUp', 'RestaurantController@createRestaurantAction');
 $app->get('/restaurant.{id}', 'RestaurantController@getRestaurantAction');
 
